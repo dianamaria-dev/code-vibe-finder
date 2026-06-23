@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Vibe Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="modal" id="app">
+
+        <!-- INTRO SCREEN -->
+        <div id="intro-screen" class="screen active">
+            <!-- FIXED: Logo directly with header-icon-img class -->
+            <img src="assets/logo-pixel.png" alt="Pixel Logo" class="header-icon-img">
+            <h1>Code Vibe Finder</h1>
+            <p class="desc">Answer 16 quick questions and discover which coding language matches your personality.</p>
+            <div class="info-badges">
+                <span>⏱️ ~2 mins</span>
+                <span>📊 4 possible results</span>
+            </div>
+            <button class="btn-primary" id="start-btn">Start Quiz →</button>
+        </div>
+
+        <!-- QUIZ SCREEN -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <span id="question-counter">Question 1 / 16</span>
+                <span id="timer-display">⏱️ 0:00</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-fill" style="width: 0%;"></div>
+            </div>
+            <p id="question-text" class="question-text">Loading question...</p>
+            <div id="answers-container" class="answers-grid"></div>
+            <button class="btn-secondary" id="next-btn" disabled>Next →</button>
+        </div>
+
+        <!-- RESULTS SCREEN -->
+        <div id="results-screen" class="screen">
+            <div class="result-icon" id="result-emoji">🎉</div>
+            <h2>You are a <span id="result-name">React</span> Developer!</h2>
+            <p id="result-description" class="result-text">Loading description...</p>
+            
+            <div class="stats-box">
+                <div class="stat-item">
+                    <!-- FIXED: Added class="category-icon" to each -->
+                    <span><img src="assets/python-pixel.png" alt="Python" class="category-icon"> Python</span>
+                    <div class="stat-bar"><div class="stat-fill" id="python-fill" style="width: 0%;"></div></div>
+                </div>
+                <div class="stat-item">
+                    <span><img src="assets/typescript-pixel.png" alt="TypeScript" class="category-icon"> TypeScript</span>
+                    <div class="stat-bar"><div class="stat-fill" id="ts-fill" style="width: 0%;"></div></div>
+                </div>
+                <div class="stat-item">
+                    <span><img src="assets/javascript-pixel.png" alt="JavaScript" class="category-icon"> JavaScript</span>
+                    <div class="stat-bar"><div class="stat-fill" id="js-fill" style="width: 0%;"></div></div>
+                </div>
+                <div class="stat-item">
+                    <span><img src="assets/rust-pixel.png" alt="Rust" class="category-icon"> Rust</span>
+                    <div class="stat-bar"><div class="stat-fill" id="rust-fill" style="width: 0%;"></div></div>
+                </div>
+            </div>
+
+            <!-- RECOMMENDATION CARD (API) -->
+            <div class="github-card" id="repo-recommendation">
+                <p>🔍 Finding the hottest <span id="result-lang-name">Python</span> project for you...</p>
+            </div>
+
+            <button class="btn-primary" id="restart-btn">🔄 Take Quiz Again</button>
+
+            <!-- FOOTER -->
+            <div class="footer-links">
+                <p>Made with love by <a href="https://github.com/dianamaria-dev" target="_blank">Diana Serban</a></p>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
